@@ -1,0 +1,62 @@
+/* CSS3增加了多种属性选择器 
+比如:disabled="disabled" 利用这种方法选中button[disabled]注意button和\
+[]之间不能有空格 
+注意:类,伪类,属性选择器的权重都为10 伪元素选择器的权重为1和标签一样
+可以通过button[disabled="disabled"]进一步指定属性
+button[disabled^="disabled"]表示以disabled开头
+button[disabled$="disabled"]表示以disabled结尾
+button[disabled*="disabled"]表示包含disabled
+CSS3还新增了结构伪类选择器比如:
+E:first-child
+E:last-child
+E:nth-child()
+nth-child使用方法有很多.比如:
+E:nth-child(even)表示选择选择偶数
+E:nth-child(2n)表示偶数 注意n从0开始且第0和负数会被忽略
+E:nth-child(2n+1)表示选奇数
+E:nth-child(5n)表示选5的倍数
+E:nth-child(n+5)表示从第五个元素开始选
+E:nth-child(-n+5)表示选前五个因为负数会被忽略
+需要注意:div:nth-child(2)表示选择div中的第二个子元素
+而, div span:nth-child(2)表示div中的第二个子元素且必须是span
+div span:nth-of-type(2)表示div中的第二个span元素
+同样的道理还有first-of-type和last-of-type
+CSS3还增加了伪元素选择器,之所以叫伪元素因为它不是真正的元素但具有元素的特性,可以在内容的前面加内容和后面加内容.如:
+div::before{
+    content:"我";
+    width:100px;
+    height:100px;
+    display:block;
+}
+div::after{
+    content:"我";
+    width:100px;
+    height:100px;
+    display:block;
+}
+
+ea3a表示↑ea3b表示↗ea3c表示→ea50表示下箭头*/
+
+.main {
+    height: 200px;
+    width: 100%;
+    background: pink;
+    margin: 0 auto;
+}
+
+p {
+    border: 2px solid purple;
+    background: teal;
+    padding: 2%;
+    width: 200px;
+    height: 60%;
+    position: relative;
+    left: 10px;
+}
+
+p::after {
+    content: "🔺";
+    position: absolute;
+    right: 10px;
+    top: 20;
+}
