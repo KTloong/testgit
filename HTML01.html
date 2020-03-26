@@ -1,0 +1,64 @@
+<!-- 针对DIV新增了语义标签 -->
+<!-- 如header nav article section aside footer -->
+<!-- 还新增了多种多媒体标签 如:audio video -->
+<!-- 表单属性也增加了一些 比如: email url date time number tel search color-->
+<!-- 表单添加了required属性表示不能为空,添加了占位符placeholder水印 autofocus用于光标\
+    自动跳入输入框 autocomplete用于帮助填充但是通常设为"off"且需要设置name属性方可使用\
+multiple属性可以多选文件提交-->
+
+<!-- 总结:
+HTML5有了如下特性:
+1.针对块标签添加了一些语义,衍生除了更多具有语义的块标签.比如:header,nav,article,section,
+footer,aside等等
+2.怎加了audio和video标签,通过audio标签和video标签可以设置多个数据源,通过loop设置循环播放
+通过autoplay设置自动播放,通过muted关闭声音播放
+3.对于表单form标签,新增加了多种type类型.比如:email,url,number,date,time,tel,search,color
+等等
+4.对于表单form标签新增了一些属性.比如:用于让字段不能为空的required属性,实现文件多选的multiple
+属性,实现自动光标跳转的autofocus属性,实现水印效果的placeholder属性 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header,
+        nav,
+        section {
+            width: 100%;
+            height: 120px;
+            background-color: pink;
+        }
+        
+        video {
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        header
+    </header>
+    <nav>
+        nav
+    </nav>
+    <section>section</section>
+    <audio controls="controls" autoplay="autoplay" loop="loop">
+        <source src="snow.mp3",type="audio/mp3">
+        <source src="snow.ogg",type="audio/ogg">
+    </audio>
+    <video autoplay="autoplay" muted="muted" loop="loop">
+        <source src="snow.mp4",type="video/mp4">
+        <source src="snow.ogg",type="video/ogg">
+        
+    </video>
+    <form action="">
+        <input type="file" multiple required placeholder="请输入一个邮箱地址" autofocus autocomplete="on" name="myinput"><input type="submit" value="提交">
+    </form>
+</body>
+<script src="test.js"></script>
+
+</html>
